@@ -1,0 +1,39 @@
+@media (min-width: 834px) and (max-width: 1194px) {
+    .home {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      width: 100%;
+      color: black;
+      background-color: #bf6d65;
+      background-size: cover;
+    }
+  
+
+    .container-botoes {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      align-items: center;
+    }
+    .botao{
+      width: 450px;
+      height: 80px;
+      background-color: #BFB3A4;
+    }
+    input#e-mail {
+      width: 50vw;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      border: none;
+  }
+  
+  input#senha {
+      width: 50vw;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      border: none;
+  }
+  }
+  
