@@ -35,7 +35,7 @@ export function Login() {
         <h1>Burguer</h1>
         </div>
       
-          <img src={waitress} alt="logo" />
+          <img className='img-login'src={waitress} alt="logo" />
       
         <div className="login-form">
           <form className="container-inputs">

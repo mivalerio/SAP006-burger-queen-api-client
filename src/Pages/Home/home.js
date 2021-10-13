@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React} from "react";
 import { Navigator } from "../../rotas";
 import { useHistory } from "react-router-dom";
 import "../Home/home.css";

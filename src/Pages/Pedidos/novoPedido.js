@@ -32,7 +32,7 @@ export function NovoPedido() {
       setSides(lista.filter((item) => item.sub_type === "side"));
       setDrinks(lista.filter((item) => item.sub_type === "drinks"));
     });
-  });
+  },[userToken]);
 
   return (
     <>
@@ -42,23 +42,37 @@ export function NovoPedido() {
             Café da Manha
           </button>
           <button type="submit" onClick={() => setMenu("allDay")}>
-            All Day
+            Hambúrguer
+          </button>
+          <button type="submit" onClick={() => setMenu("drinks")}>
+            Sucos
+          </button>
+          <button type="submit" onClick={() => setMenu("side")}>
+            Acompanhamento
           </button>
          
         </nav>
       </header>
       <main>
+      <section className="cards">
         {menu === "breakfast" &&
+        
           breakfast.map((item) => {
             return (
-              <Card imagem={item.image} name={item.name} price={item.price} />
+              <Card key={item.id} imagem={item.image} name={item.name} price={item.price} />
+          
             );
+        
           })}
+          </section>
 
+      <section className="cards">
         {menu === "allDay" &&
+         
           simpleBurgers.map((item) => {
             return (
               <CardBurguer
+                key={item.id}
                 imagem={item.image}
                 name={item.name}
                 price={item.price}
@@ -67,10 +81,14 @@ export function NovoPedido() {
               />
             );
           })}
+          </section>
+
+          <section className="cards">
         {menu === "allDay" &&
           doubleBurgers.map((item) => {
             return (
               <CardBurguer
+                key={item.id}
                 imagem={item.image}
                 name={item.name}
                 price={item.price}
@@ -79,30 +97,37 @@ export function NovoPedido() {
               />
             );
           })}
-          {menu === "allDay" &&
+          </section>
+
+          <section className="cards">
+          {menu === "drinks" &&
           drinks.map((item) => {
             return (
-              <CardBurguer
+              <Card
+                key={item.id}
                 imagem={item.image}
                 name={item.name}
                 price={item.price}
-                complement={item.complement}
-                flavor={item.flavor}
               />
             );
           })}
-          {menu === "allDay" &&
+          </section>
+
+          <section className="cards">
+          {menu === "side" &&
           sides.map((item) => {
             return (
-              <CardBurguer
+              <Card
+                key={item.id}
                 imagem={item.image}
                 name={item.name}
                 price={item.price}
-                complement={item.complement}
-                flavor={item.flavor}
               />
             );
           })}
+          </section>
+        
+          
       </main>
     </>
   );

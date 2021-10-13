@@ -1,8 +1,23 @@
-.card_itens {
-    width: 100%;
+
+
+.cards{
     display: flex;
-    flex-flow: row nowrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0 5vh;
+    flex-wrap: wrap;
+}
+.card_items {
+    width: 15vh;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    margin: 3%;
+    background-color: red;
+    flex-wrap: wrap;
+    margin: 2vh;
   } 
+  .img-card{
+      height: 50px;
+      width: 50px;
+  }
   
