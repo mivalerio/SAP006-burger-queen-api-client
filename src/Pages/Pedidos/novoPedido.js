@@ -3,9 +3,11 @@ import { Menu } from "../../services/menu";
 //import { useHistory } from 'react-router-dom';
 //import { Navigator } from "../../rotas";
 //import { Select, SelectOption } from "../../components/select";
-import { Card, CardBurguer } from '../../components/Cards/cards';
-import { Carrinho } from '../../components/carrinho/carrinho';
-
+import { Card, CardBurguer } from "../../components/Cards/cards";
+import { Carrinho } from "../../components/carrinho/carrinho";
+import { Link } from "react-router-dom";
+import { CriarPedido } from "../../services/Orders";
+//import { Comanda } from "../../components/Comanda/comanda";
 
 export function NovoPedido() {
   //const history = useHistory();
@@ -18,8 +20,13 @@ export function NovoPedido() {
   const [sides, setSides] = useState([]);
   const [drinks, setDrinks] = useState([]);
   const [pedido, setPedido] = useState([]);
+  const [mesa, setMesa] = useState("");
+  const [cliente, setCliente] = useState("");
+  
 
   const [menu, setMenu] = useState("breakfast");
+
+
 
   useEffect(() => {
     Menu(userToken).then((lista) => {
@@ -74,6 +81,22 @@ export function NovoPedido() {
   };
   const total = calcularTotal(pedido);
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("Entrou Handle Submit")
+    const novoPedido = {
+      client: cliente,
+      table: mesa,
+      products: pedido.map((item) => ({
+        id: item.id,
+        qtd:item.qtd,
+      })),
+    };
+   const banana = CriarPedido(novoPedido, userToken);
+    setPedido([]);
+    console.log(banana)
+  };
+
   return (
     <>
       <header>
@@ -103,7 +126,6 @@ export function NovoPedido() {
                   name={item.name}
                   price={item.price}
                   onClick={(e) => adicionar(e, item)}
-                  
                 />
               );
             })}
@@ -121,7 +143,6 @@ export function NovoPedido() {
                   complement={item.complement}
                   flavor={item.flavor}
                   onClick={(e) => adicionar(e, item)}
-                  
                 />
               );
             })}
@@ -139,7 +160,6 @@ export function NovoPedido() {
                   complement={item.complement}
                   flavor={item.flavor}
                   onClick={(e) => adicionar(e, item)}
-                  
                 />
               );
             })}
@@ -155,7 +175,6 @@ export function NovoPedido() {
                   name={item.name}
                   price={item.price}
                   onClick={(e) => adicionar(e, item)}
-                  
                 />
               );
             })}
@@ -171,36 +190,57 @@ export function NovoPedido() {
                   name={item.name}
                   price={item.price}
                   onClick={(e) => adicionar(e, item)}
-                  
                 />
               );
             })}
         </section>
-        
-        {pedido.map((item, index) => (
-          <div key={index}>
-            {" "}
-            <Carrinho
-              name={item.name}
-              price={item.price}
-              qtd={item.qtd}
-              flavor={item.flavor}
-              complement={item.complement}
-              onClick={(e) => remover(e, item, index)} 
+        <section>
+          <input
+            type="cliente"
+            name="cliente"
+            placeholder="Nome"
+            onChange={(event) => setCliente(event.target.value)}
+            value={cliente}
+          />
 
-            />{" "}
+          <div className="info-table-client">
+            <select
+              className="table-select"
+              name="Mesa: "
+              onChange={(event) => setMesa(event.target.value)}
+            >
+              <option value="mesa">Mesa</option>
+              <option value="01">01</option>
+              <option value="02">02</option>
+              <option value="03">03</option>
+              <option value="04">04</option>
+              <option value="05">05</option>
+            </select>
           </div>
-        ))}
-        <h2>TOTAL: R${total},00</h2>
-        <button type="submit">
-            Preparar
-          </button>
-          <button type="submit">
-            Home
-          </button>
- 
 
+          {pedido.map((item, index) => (
+            <div key={index}>
+              {" "}
+              <Carrinho
+                name={item.name}
+                price={item.price}
+                qtd={item.qtd}
+                flavor={item.flavor}
+                complement={item.complement}
+                onClick={(e) => remover(e, item, index)}
+              />{" "}
+            </div>
+          ))}
+          <h2>TOTAL: R${total},00</h2>
+        </section>
+        <button type="submit" onClick= {handleSubmit}>Preparar</button>
+        <Link to = '/home'>Home</Link>
       </main>
     </>
   );
 }
+
+//fazer o fetch na api /order passando o objeto ok
+// *add a pagina / rota cozinha ok
+// trazer na tela da cozinha os dados da api
+// ajustar o css

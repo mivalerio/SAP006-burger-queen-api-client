@@ -31,8 +31,7 @@ export function Login() {
     <>
       <div className="login">
         <div className='cabecalho'>
-        <h1>Pinup</h1>
-        <h1>Burguer</h1>
+        
         </div>
       
           <img className='img-login'src={waitress} alt="logo" />
