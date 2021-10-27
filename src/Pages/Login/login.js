@@ -33,9 +33,9 @@ export function Login() {
         <div className='cabecalho'>
         
         </div>
-      
+        <div className='box-imagem'>
           <img className='img-login'src={waitress} alt="logo" />
-      
+      </div>
         <div className="login-form">
           <form className="container-inputs">
             <input id='e-mail'

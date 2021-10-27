@@ -25,3 +25,16 @@ export function CardBurguer({ imagem, name, price, complement, flavor, onClick }
     </div>
   );
 }
+
+export function CardCozinha({name, price, complement, flavor, onClick,children }) {
+  return (
+    <div className="card_items">
+      <p>{name}</p>
+      <p>{price}</p>
+      <p>{complement}</p>
+      <p>{flavor}</p>
+      <button onClick={onClick} className="">{children}</button>
+    </div>
+  );
+}
+

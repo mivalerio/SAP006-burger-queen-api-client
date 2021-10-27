@@ -1,4 +1,5 @@
-export function Comanda({ cliente, mesa, id, qtd }) {
+export function Comanda({ cliente, mesa, id, qtd,itens }) {
+  
     return (
       
         <div >
@@ -6,7 +7,10 @@ export function Comanda({ cliente, mesa, id, qtd }) {
           <p>{mesa}</p>
           <p>{qtd}</p>
           <p>{id}</p>
+          <section>{itens}</section>
         </div>
   
     );
   }
+
+  

@@ -45,7 +45,6 @@ export function SignUp() {
   return (
     <>
       <div className="signup">
-        <h1>Cadastro</h1>
         <div className="cadastro-form">
           <form className="container-cadastro">
             <input

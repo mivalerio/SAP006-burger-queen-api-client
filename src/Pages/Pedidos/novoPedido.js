@@ -7,7 +7,8 @@ import { Card, CardBurguer } from "../../components/Cards/cards";
 import { Carrinho } from "../../components/carrinho/carrinho";
 import { Link } from "react-router-dom";
 import { CriarPedido } from "../../services/Orders";
-//import { Comanda } from "../../components/Comanda/comanda";
+import './novoPedido.css'
+
 
 export function NovoPedido() {
   //const history = useHistory();
@@ -92,15 +93,15 @@ export function NovoPedido() {
         qtd:item.qtd,
       })),
     };
-   const banana = CriarPedido(novoPedido, userToken);
+   CriarPedido(novoPedido, userToken);
     setPedido([]);
-    console.log(banana)
+    console.log()
   };
 
   return (
     <>
-      <header>
-        <nav>
+      <section className='paginaNovo-Pedido'>
+        <nav className='container-botoes'>
           <button type="submit" onClick={() => setMenu("breakfast")}>
             Café da Manha
           </button>
@@ -114,7 +115,7 @@ export function NovoPedido() {
             Acompanhamento
           </button>
         </nav>
-      </header>
+      
       <main>
         <section className="cards">
           {menu === "breakfast" &&
@@ -194,7 +195,7 @@ export function NovoPedido() {
               );
             })}
         </section>
-        <section>
+        <section className='carrinho'>
           <input
             type="cliente"
             name="cliente"
@@ -228,6 +229,7 @@ export function NovoPedido() {
                 flavor={item.flavor}
                 complement={item.complement}
                 onClick={(e) => remover(e, item, index)}
+                children="remover"
               />{" "}
             </div>
           ))}
@@ -236,8 +238,11 @@ export function NovoPedido() {
         <button type="submit" onClick= {handleSubmit}>Preparar</button>
         <Link to = '/home'>Home</Link>
       </main>
+      </section>
     </>
+  
   );
+  
 }
 
 //fazer o fetch na api /order passando o objeto ok
