@@ -10,6 +10,7 @@ export const CriarPedido = async (novoPedido, token) => {
         body: JSON.stringify(novoPedido)
     })
     const json = await response.json();
+    return json;
     
 }
 
