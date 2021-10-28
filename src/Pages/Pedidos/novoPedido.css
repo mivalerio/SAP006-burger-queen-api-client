@@ -31,6 +31,10 @@
     margin: 5%;
     padding: 3%;
 }
+.menu{
+    overflow: auto;
+    height: 500px;
+}
 
 
     

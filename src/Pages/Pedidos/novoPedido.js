@@ -117,6 +117,7 @@ export function NovoPedido() {
         </nav>
       
       <main>
+        <div className='menu'>
         <section className="cards">
           {menu === "breakfast" &&
             breakfast.map((item) => {
@@ -194,7 +195,9 @@ export function NovoPedido() {
                 />
               );
             })}
+          
         </section>
+        </div>
         <section className='carrinho'>
           <input
             type="cliente"

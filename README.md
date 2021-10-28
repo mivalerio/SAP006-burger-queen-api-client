@@ -1,70 +1,148 @@
-# Getting Started with Create React App
+# Pinup Burguer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Índice
 
-## Available Scripts
+- [1. Sobre o projeto](#1-sobre-o-projeto)
+- [2. Historias de usuários](#2-sobre-o-tema)
+- [3. Layout](#3-experiência-dos-usuários)
+- [4. Paleta de cores](#4-layout)
+- [5. Objetivos de Aprendizagem](#5-conteúdo)
+- [6. A Aplicação](#6-comecando)
+- [7. A Autora](#6-autora)
 
-In the project directory, you can run:
 
-### `npm start`
+## 1. Sobre o projeto
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Pinup Burger é um pequeno restaurante de hambúrgueres, que está crescendo, e necessitava uma interface para realizar pedidos utilizando um tablet, e enviá-los para a cozinha para que sejam preparados de forma ordenada e eficiente.
+![img](src/img/pinupBurguer.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 2. Histórias de usuários 
 
-### `npm test`
+Uma história do usuário é uma explicação informal e geral sobre um recurso de software escrita a partir da perspectiva do usuário final. Seu objetivo é articular como um recurso de software pode gerar valor para o cliente.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Primeira História de Usuário
 
-### `npm run build`
+    Quero cadastrar meus funcionarios. Eu, como garçom/garçonete quero entrar no sistema de pedidos.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Segunda História de Usuário
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    Eu como garçom/garçonete quero poder anotar o pedido de um cliente para não depender da minha memória, saber quanto cobrar e poder enviar os pedidos para a cozinha para serem preparados em ordem.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## 3. Layout art
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+O processo de criação foi pensado buscando um layout intuitivo e de fácil compreensão.
+![img](src/img/figma.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 4. Paleta de cores
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Para o layout, pensamos em uma paleta de cores que remete a nostagia e minimalismo  
+![img](src/img/paleta.png) 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 5. Objetivos de aprendizagem
 
-## Learn More
+React
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    jsx
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    components
 
-### Code Splitting
+    events
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    lists-and-keys
 
-### Analyzing the Bundle Size
+    conditional-rendering
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    lifting-up-state
 
-### Making a Progressive Web App
+    hooks
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+    css-modules
 
-### Advanced Configuration
+    routing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+HTML
 
-### Deployment
+    Uso de HTML semântico
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+CSS
 
-### `npm run build` fails to minify
+    Utilização do Sass
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    Uso de seletores de CSS
+
+    Empregar o modelo de caixa (box model): borda, margem, preenchimento
+
+    Uso de flexbox en CSS
+
+    Uso de CSS Grid Layout
+
+    Uso de media queries
+
+JavaScript
+
+    Uso ES modules
+
+    Uso de linter (ESLINT)
+
+    Uso de identificadores descritivos (Nomenclatura | Semântica)
+
+Git e GitHub
+
+    Git: Instalação e configuração
+
+    Git: Controle de versão com git (init, clone, add, commit, status, push, pull, remote)
+
+    Git: Integração de mudanças entre ramos (branch, checkout, fetch, merge, reset, rebase, tag)
+
+    GitHub: Criação de contas e repositórios, configuração de chave SSH
+
+    GitHub: Implantação com GitHub Pages
+
+    GitHub: Colaboração pelo Github (branches | forks | pull requests | code review | tags)
+
+    GitHub: Organização pelo Github (projects | issues | labels | milestones | releases)
+
+HTTP
+
+    Solicitações o requisições (request) e respostas (response).
+
+    Cabeçalhos (headers)
+
+    Corpo (body)
+
+    Verbos HTTP
+
+    Codigos de status de HTTP
+
+    Encodings e JSON
+
+    CORS (Cross-Origin Re
+
+    source Sharing)
+
+UX (User eXperience)
+
+    Desenhar a aplicação pensando e entendendo o usuário
+
+    Criar protótipos para obter feedback e iterar
+
+    Aplicar os princípios de desenho visual (contraste, alinhamento, hierarquia)
+
+    Planejar e executar testes de usabilidade
+
+
+## 6. A aplicação
+
+Login: teste@teste.com.br
+Senha: 123456
+
+![img](src/img/pinupBurguer.png) 
+![img](src/img/menu.png) 
+![img](src/img/cozinha.png)
+
+## 7. A autora
+
+[Michele Martins](https://www.linkedin.com/in/michele-valerio-martins/)
+
+
